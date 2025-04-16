@@ -1,0 +1,6 @@
+framework module Pods_InstantCurrency {
+  umbrella header "Pods-InstantCurrency-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header-content">
+      <ion-icon name="trending-up-outline" class="header-icon"></ion-icon>
+      <ion-title>Instant Currency</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="currency-container">
+    <ion-item>
+      <ion-label position="stacked">Source Currency</ion-label>
+      <ion-select [(ngModel)]="sourceCurrency" (ngModelChange)="onCurrencyChange()">
+        @for (currency of currencies | keyvalue; track currency.key) {
+        <ion-select-option [value]="currency.key">
+          {{currency.key}} - {{currency.value}}
+        </ion-select-option>
+        }
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Target Currency</ion-label>
+      <ion-select [(ngModel)]="targetCurrency" (ngModelChange)="onCurrencyChange()">
+        @for (currency of currencies | keyvalue; track currency.key) {
+        <ion-select-option [value]="currency.key">
+          {{currency.key}} - {{currency.value}}
+        </ion-select-option>
+        }
+      </ion-select>
+    </ion-item>
+
+    <ion-button fill="clear" (click)="swapCurrencies()" class="swap-button">
+      <ion-icon name="swap-vertical-outline" slot="icon-only"></ion-icon>
+    </ion-button>
+  </div>
+
+  @if(currentRate) {
+  <div class="rate-info">
+    <span class="current-rate">
+      1 {{sourceCurrency}} = {{currentRate | number:'1.4-4'}} {{targetCurrency}}
+    </span>
+    <span class="rate-change" [class.positive]="isPositiveChange" [class.negative]="!isPositiveChange">
+      ({{rateChange >= 0 ? '+' : ''}}{{rateChange | number:'1.2-2'}}%)
+    </span>
+  </div>
+  }
+
+  <app-currency-chart [historicalRates]="historicalRates" [sourceCurrency]="sourceCurrency"
+    [targetCurrency]="targetCurrency">
+  </app-currency-chart>
+</ion-content>

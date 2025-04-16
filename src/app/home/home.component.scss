@@ -1,0 +1,70 @@
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+
+  .header-icon {
+    font-size: 24px;
+    color: #1ac8e5;
+    border: 2px solid #1ac8e5;
+    border-radius: 50%;
+    padding: 2px;
+    width: 28px;     
+    height: 28px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ion-title {
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+
+.currency-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 16px;
+    padding: 16px;
+  
+    ion-item {
+      width: 100%;
+      --padding-start: 0;
+    }
+  
+    .swap-button {
+      grid-column: 2;
+      grid-row: 1 / 3;
+      align-self: center;
+      height: 100%;
+      margin: 0;
+      --color: #1ac8e5;
+      
+      ion-icon {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .rate-info {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    .current-rate {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    
+    .rate-change {
+      &.positive {
+        color: #2dd36f;
+      }
+      &.negative {
+        color: #eb445a;
+      }
+    }
+  }

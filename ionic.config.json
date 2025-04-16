@@ -1,0 +1,7 @@
+{
+  "name": "instant-currency",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

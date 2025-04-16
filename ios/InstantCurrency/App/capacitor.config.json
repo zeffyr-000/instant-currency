@@ -1,0 +1,35 @@
+{
+	"appId": "io.sparkman.instantcurrency",
+	"appName": "InstantCurrency",
+	"webDir": "www",
+	"server": {
+		"androidScheme": "https",
+		"iosScheme": "https"
+	},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 1500,
+			"backgroundColor": "#121212"
+		},
+		"StatusBar": {
+			"style": "dark",
+			"backgroundColor": "#121212",
+			"overlaysWebView": true
+		}
+	},
+	"ios": {
+		"scheme": "InstantCurrency",
+		"contentInset": "automatic",
+		"preferredContentMode": "mobile",
+		"backgroundColor": "#121212"
+	},
+	"android": {
+		"backgroundColor": "#121212"
+	},
+	"packageClassList": [
+		"AppPlugin",
+		"HapticsPlugin",
+		"KeyboardPlugin",
+		"StatusBarPlugin"
+	]
+}
